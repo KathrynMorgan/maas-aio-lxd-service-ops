@@ -1,0 +1,639 @@
+    1  lxc config set maasctl security.privileged true
+    2  exit
+    3  ip a
+    4  vim /etc/netplan/50-cloud-init.yaml 
+    5  ip link set eth1 down; ip link set eth1 up
+    6  ip a
+    7  reboot
+    8  ip a
+    9  apt update && apt upgrade -y && apt dist-upgrade -y && apt autoremove -y
+   10  apt-add-repository ppa:maas/stable -y
+   11  apt install -y maas
+   12  apt install libvirt-bin -y
+   13  virsh net-destroy default
+   14  virsh net-undefine default
+   15  maas init
+   16  dpkg-reconfigure maas-region-controller
+   17  ip a
+   18  dpkg-reconfigure maas-rack-controller
+   19  clear
+   20  lxc list
+   21  exit
+   22  reboot
+   23  clear
+   24  ip a
+   25  chsh -s /bin/bash maas
+   26  su -- maas
+   27  clear
+   28  exit
+   29  vim /etc/netplan/
+   30  ls
+   31  maas-region apikey --username=katamo
+   32  clear
+   33  exit
+   34  maas-region apikey --username=katamo
+   35  exit
+   36  apt-cache search juju
+   37  apt-cache search juju | grep agent
+   38  apt-cache search juju | grep client
+   39  clear
+   40  virtualenv jujuclient
+   41  exit
+   42  clear
+   43  whoami'
+   44  whoami
+   45  clear
+   46  ip a
+   47  kubectl get nodes -o yaml | grep 172
+   48  exit
+   49  ls
+   50  cd maas-login-katamo/
+   51  clear
+   52  vim maas-login.vim 
+   53  source maas-login.vim 
+   54  vim login.sh 
+   55  ./login.sh katamo
+   56  clear
+   57  exit
+   58  clear
+   59  sudo su - maas
+   60  clear
+   61  sudo su - maas
+   62  clear
+   63  sudo su - maas
+   64  clear
+   65  sudo su - maas
+   66  exit
+   67  ls
+   68  ls maas-login-katamo/
+   69  lxc list
+   70  su - maas
+   71  clear
+   72  exit
+   73  ping 172.1.0.99
+   74  su -- maas
+   75  exit
+   76  dpkg-reconfigure maas-region-controller
+   77  dpkg-reconfigure maas-rack-controller
+   78  ovs-vsctl show
+   79  dpkg-reconfigure maas-region-controller
+   80  dpkg-reconfigure maas-rack-controller
+   81  clear
+   82  ovs-vsctl show
+   83  ping images.maas.io
+   84  clear
+   85  exit
+   86  clear
+   87  su - maas
+   88  echo "172.1.0.22 precision.braincraft.io precision" >>/etc/hosts
+   89  su - maas
+   90  exit
+   91  su - maas
+   92  exit
+   93  ping 172.1.0.171
+   94  ping precision.braincraft.io
+   95  ssh root@precision.braincraft.io
+   96  ssh-copy-id root@precision.braincraft.io
+   97  su maas
+   98  exit
+   99  su maas
+  100  vim /etc/hosts
+  101  su maas
+  102  clear
+  103  ip a
+  104  exit
+  105  apt update
+  106  vim /etc/resolv.conf 
+  107  reboot
+  108  clear
+  109  exit
+  110  ping google.com
+  111  apt update
+  112  ip a
+  113  ip r
+  114  cat /etc/resolv.conf 
+  115  echo "nameserver 172.1.0.10" >/etc/resolv.conf 
+  116  apt update
+  117  ping security.ubuntu.com
+  118  ip r
+  119  ip a
+  120  ip link set eth0 down
+  121  ip r
+  122  ifdown eth1 ; ifup eth1
+  123  clear
+  124  ip a
+  125  vim /etc/netplan/50-cloud-init.yaml 
+  126  netplan generate
+  127  vim /etc/netplan/50-cloud-init.yaml 
+  128  netplan generate
+  129  vim /etc/netplan/50-cloud-init.yaml 
+  130  netplan generate
+  131  vim /etc/netplan/50-cloud-init.yaml 
+  132  netplan generate
+  133  vim /etc/netplan/50-cloud-init.yaml 
+  134  clear
+  135  cd /etc/netplan/
+  136  ls
+  137  rm 50-cloud-init.yaml 
+  138  clear
+  139  cp /usr/share/doc/netplan.io/examples/static.yaml ./50-networks.yaml
+  140  vim 50-networks.yaml 
+  141  clear
+  142  cd
+  143  clear
+  144  exit
+  145  apt update
+  146  ping security.ubuntu.com
+  147  netplan generate
+  148  clear
+  149  netplan generate
+  150  netplan apply
+  151  apt update
+  152  exit
+  153  clear
+  154  mkdir Downloads
+  155  clear
+  156  exit
+  157  timedatectl set-ntp off
+  158  timedatectl set-ntp on
+  159  date
+  160  vim /etc/timezone 
+  161  timedatectl set-ntp off
+  162  timedatectl set-ntp on
+  163  clear; ip a
+  164  date
+  165  reboot
+  166  date
+  167  clear
+  168  timedatectl 
+  169  cat /etc/timezone 
+  170  hwclock 
+  171  cat /etc/timezone 
+  172  timedatectl 
+  173  timedatectl --help
+  174  timedatectl set-timezone Pacific/Honlulu
+  175  timedatectl list-timezones
+  176  timedatectl list-timezones | grep Pacific
+  177  timedatectl set-timezone Pacific/Honolulu
+  178  timedatectl 
+  179  clear
+  180  virsh console ipa
+  181  exit
+  182  shutdown -h now
+  183  clear; ip a
+  184  vim /etc/network/interfaces 
+  185  vim /etc/netplan/50-networks.yaml 
+  186  shutdown -h now
+  187  clear
+  188  ip a
+  189  clear
+  190  dpkg-reconfigure maas-rack-controller
+  191  dpkg-reconfigure maas-region-controller
+  192  dpkg-reconfigure maas-rack-controller
+  193  exit
+  194  clear
+  195  apt autocleane
+  196  apt autoclean
+  197  pkill -KILL apt
+  198  apt autoclean
+  199  clear
+  200  apt update
+  201  clear
+  202  apt-cache depends maas-rack-controller
+  203  apt-cache depends maas-rack-controller | grep ntp
+  204  apt-cache depends maas-rack-controller | grep time
+  205  clear
+  206  date
+  207  date --help
+  208  date | grep set
+  209  sudo dpkg-reconfigure --frontend noninteractive tzdata
+  210  sudo service cron restart
+  211  clear
+  212  sudo ntpd -q -g -x -n
+  213  reboot
+  214  journalctl -fxe
+  215  journalctl -fxe | grep maasctl
+  216  clear
+  217  dpkg-reconfigure maas-rack-controller
+  218  journalctl -fxe
+  219  date
+  220  date '-s 2018-08-02 12:40:00'
+  221  clear
+  222  date
+  223  hwclock --hctosys
+  224  hwclock --hctosys --debug
+  225  timedatectl 
+  226  timedatectl systemctl status systemd-timesyncd
+  227  systemctl status
+  228  clear
+  229  systemctl status
+  230  clear
+  231  systemctl status systemd-timesyncd
+  232  systemctl start systemd-timesyncd
+  233  systemctl status systemd-timesyncd
+  234  timedatectl set-time 12:57
+  235  timedatectl 
+  236  systemctl stop systemd-timesyncd
+  237  timedatectl 
+  238  timedatectl set-time 12:57
+  239  timedatectl 
+  240  timedatectl --help
+  241  timedatectl set-ntp off
+  242  timedatectl set-time 12:59
+  243  apt-get install ntp
+  244  clear
+  245  vim /etc/timezone 
+  246  timedatectl 
+  247  dpkg-reconfigure maas-rack-controller
+  248  cd /var/log/maas/
+  249  ls
+  250  clear
+  251  lnav .
+  252  apt install lnav && lnav .
+  253  dpkg --configure -a
+  254  apt install lnav && lnav .
+  255  lnav /var/log/maas/
+  256  cd /var/log/
+  257  cd maas/
+  258  clear; ls
+  259  rm *.gz
+  260  ls
+  261  clear
+  262  lnav .
+  263  clear
+  264  apt update && apt upgrade -y
+  265  ping google.com
+  266  ping security.ubuntu.com
+  267  apt update && apt upgrade -y
+  268  reboot
+  269  clear
+  270  journalctl -fxe
+  271  journalctl -fxe | grep ntp
+  272  date
+  273  exit
+  274  history
+  275  cat /etc/timezone 
+  276  exit
+  277  ls
+  278  cd Downloads/
+  279  ls
+  280  wget http://archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  281  http://142.129.4.107:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  282  http://142.129.4.105:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  283  wget http://142.129.4.107:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  284  wget http://142.129.4.105:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  285  ls
+  286  rm *.deb
+  287  wget http://142.129.4.105:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  288  rm *.deb
+  289  wget http://142.129.4.107:80/data/03004bb8e34dc10a/archive.ubuntu.com/ubuntu/pool/main/l/linux-firmware/linux-firmware_1.157.20_all.deb
+  290  ls
+  291  rm *.deb
+  292  apt update
+  293  clear
+  294  ssh apd
+  295  su maas
+  296  exit
+  297  clear
+  298  find / -name "*linux-firmware*"
+  299  rm -rf /root/Downloads/*
+  300  find / -name "*cache*"
+  301  clear
+  302  apt autoremove
+  303  clear
+  304  apt auto-cleane
+  305  apt autoclean
+  306  clear
+  307  find / -name "*.deb"
+  308  find / -name "*linux-firmware*"
+  309  exit
+  310  journalctl -fxe
+  311  exit
+  312  clear
+  313  systemctl status maas-proxy
+  314  cd /var/spool/maas-proxy/
+  315  ls
+  316  rm * -rf
+  317  systemctl restart maas-proxy
+  318  systemctl stop maas-proxy
+  319  systemctl status maas-proxy
+  320  systemctl restart maas-proxy
+  321  ls
+  322  rm -rf *
+  323  rm * -rf
+  324  systemctl restart maas-proxy
+  325  ls
+  326  tree .
+  327  apt install tree && tree .
+  328  clear
+  329  cd
+  330  clear
+  331  exit
+  332  cd maas-login-katamo/
+  333  clear
+  334  ./login katamo
+  335  clear
+  336  ls
+  337  clear
+  338  ./maas-login-katamo/login 
+  339  ./maas-login-katamo/login katamo
+  340  clear
+  341  vim maas-login-katamo/login 
+  342  rm maas-login-katamo/.login.swp 
+  343  vim maas-login-katamo/login 
+  344  vim maas-login-katamo/login katamo
+  345  ./maas-login-katamo/login katamo
+  346  clear
+  347  maas clear; ls
+  348  clear
+  349  ls
+  350  clear
+  351  ls
+  352  mv *.txt maas-login-katamo/
+  353  ls
+  354  cd maas-login-katamo/
+  355  ls
+  356  clear
+  357  maas katamo nodes read
+  358  clear
+  359  maas katamo nodes read | more
+  360  maas katamo nodes read | lnav
+  361  maas admin nodes read
+  362  maas katamo 
+  363  maas katamo machine
+  364  ./login katamo
+  365  clear
+  366  alias maas="maas katamo"
+  367  clear
+  368  maas machines
+  369  maas machines --help
+  370  maas machines read
+  371  maas machines read | more
+  372  maas machines read
+  373  maas nodes read
+  374  exit
+  375  clear
+  376  ls
+  377  mkdir maas-image-builder
+  378  cd maas-image-builder/
+  379  clear
+  380  ls
+  381  ls maas-image-builder/
+  382  rm maas-image-builder/*
+  383  mv Server2016-amd64-root-dd maas-image-builder/
+  384  cd maas-image-builder/
+  385  ls
+  386  mv Server2016-amd64-root-dd Windows-Server2016-amd64-root-dd 
+  387  clear
+  388  cd ../maas-login-katamo/
+  389  ls
+  390  ./login katamo
+  391  cd ../maas-image-builder/
+  392  maas katamo boot-resources create name=windows/win2016 architecture=amd64/generic filetype=ddtgz content@=/root/maas-image-builder/Windows-Server2016-amd64-root-dd
+  393  apt install lnav
+  394  clear
+  395  cd /var/log/maas/rsyslog/
+  396  ls
+  397  cd ms2016/
+  398  ls
+  399  cd 2018-08-27/
+  400  lsl
+  401  clear
+  402  ls
+  403  lnav .
+  404  exit
+  405  clear
+  406  find / -name "*Windows*"
+  407  find / -name "*windows*"
+  408  cd /var/lib/maas/boot-resources/
+  409  ls
+  410  ls cache/
+  411  ls
+  412  ls current
+  413  clear
+  414  ls current
+  415  ls current/windows/
+  416  ls current/windows/amd64/
+  417  ls current/windows/amd64/generic/
+  418  ls current/windows/amd64/generic/win2016/
+  419  ls current/windows/amd64/generic/win2016/uploaded/
+  420  file current/windows/amd64/generic/win2016/uploaded/root-dd 
+  421  du -sh current/windows/amd64/generic/win2016/uploaded/root-dd 
+  422  cd current
+  423  ls
+  424  ls boot
+  425  ls bootloader/
+  426  ls bootloader/pxe/
+  427  ls bootloader/pxe/i386/
+  428  clear; ls
+  429  tree .
+  430  clear
+  431  ls
+  432  cd ..
+  433  ls
+  434  cd
+  435  clear
+  436  cd maas-image-builder/
+  437  pwd
+  438  ll
+  439  clear; pwd; ls
+  440  clear
+  441  ls
+  442  mv 00193165_windows-win2016-amd64-dd maas-image-builder/
+  443  cd maas-image-builder/
+  444  clear
+  445  ls
+  446  cd ..
+  447  ls
+  448  maas katamo boot-resources create name=windows/00193165 architecture=amd64/generic filetype=ddtgz content@=/root/maas-image-builder/00193165_windows-win2016-amd64-dd
+  449  clear
+  450  lnav /var/log/maas/rsyslog/preseed/
+  451  lnav /var/log/maas/rsyslog/preseed/2018-08-27/messages 
+  452  clear
+  453  maas katamo boot-resources help
+  454  maas katamo boot-resources read
+  455  maas katamo boot-resource help
+  456  maas katamo boot-resource delete windows/00193165
+  457  maas katamo boot-resource delete 00193165
+  458  maas katamo boot-resource delete 32
+  459  clear
+  460  clear
+  461  lnav /var/log/maas/rsyslog/ms2016/2018-08-29/
+  462  clear
+  463  exit
+  464  clear
+  465  lnav /var/log/maas/rsyslog/ks-floppy/2018-09-02/
+  466  clear
+  467  tail -f /var/log/maas/*
+  468  clear
+  469  ls
+  470  tail -f /var/log/maas/*.log
+  471  exit
+  472  clear
+  473  cd maas-login-katamo/
+  474  ls
+  475  ./login katamo
+  476  clear
+  477  apt install jq
+  478  maas katamo node read xenial | jq -r '.id'
+  479  maas katamo node read xenial
+  480  clear
+  481  maas katamo nodes read
+  482  tmu
+  483  tmux
+  484  clear
+  485  exit
+  486  lnav /var/log/maas/rsyslog/imgbldr/2018-08-31/
+  487  clear
+  488  su maas
+  489  clear
+  490  exit
+  491  ls
+  492  cd maas-image-builder/
+  493  ls
+  494  rm -rf *
+  495  ls
+  496  cd ..
+  497  ls
+  498  clear
+  499  ls
+  500  history
+  501  cd maas-image-builder/
+  502  clear
+  503  ls
+  504  vim import.sh
+  505  chmod +x import.sh 
+  506  clear
+  507  ll
+  508  mv ../Server2016-virtio-supermicro-amd64-root-dd .
+  509  clear
+  510  ./import.sh ms2016_virtio /root/maas-image-builder/Server2016-virtio-supermicro-amd64-root-dd 
+  511  clear
+  512  maas katamo boot-resources read
+  513  reboot
+  514  clear
+  515  netstat eth0
+  516  clear
+  517  ip a
+  518  apt install iftop
+  519  clear
+  520  iftop eth0
+  521  iftop -i eth0
+  522  iftop
+  523  clear
+  524  exit
+  525  vim /etc/netplan/
+  526  netplan generate --debug
+  527  netplan apply --debug
+  528  ip a
+  529  exit
+  530  rebooot
+  531  reboot
+  532  ls
+  533  vim SCRATCH 
+  534  clear; ls
+  535  ls
+  536  rm -rf maas-image-builder/
+  537  ls Downloads/
+  538  rm -rf Downloads/
+  539  ll
+  540  clear; ls
+  541  vim SCRATCH 
+  542  mkdir tools
+  543  mv SCRATCH tools/test-query.sh
+  544  ls
+  545  history >>maasctl-aio-RegionRack-LXD_build.log
+    1  cd
+    2  ssh-keygen -f ~/.ssh/id_rsa -N ''
+    3  virsh -c qemu+ssh://root@$172.1.0.100/system list --all
+    4  ping 172.1.0.100
+    5  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+    6  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+    7  ssh root@172.1.0.100
+    8  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+    9  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   10  virsh -c qemu+ssh://root@172.1.0.100/system
+   11  virsh -c qemu+ssh://root@172.1.0.100/system
+   12  virsh -c qemu+ssh://katamo@172.1.0.100/session list --all
+   13  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   14  clear
+   15  exit
+   16  virsh -c qemu+ssh://root@$172.10.0.100/system list --all
+   17  virsh -c qemu+ssh://root@$172.10.0.10/system list --all
+   18  ping 172.10.0.10
+   19  ping 172.1.0.10
+   20  clear
+   21  exit
+   22  virsh -c qemu+ssh://root@$172.1.0.10/system list --all
+   23  ping 172.1.0.10
+   24  ssh root@172.1.0.10
+   25  ssh root@172.1.0.100
+   26  exit
+   27  virsh -c qemu+ssh://root@$172.1.0.100/system list --all
+   28  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   29  exit
+   30  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   31  laptop
+   32  clear
+   33  exit
+   34  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   35  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   36  virsh -c qemu+ssh://root@172.1.0.116/system list --all
+   37  clear
+   38  virsh -c qemu+ssh://root@172.1.0.116/system list --all
+   39  ping 172.1.0.100
+   40  virsh -c qemu+ssh://root@172.1.0.116/system list --all
+   41  virsh -c qemu+ssh://root@172.1.0.100/system list --all
+   42  ping 172.1.0.1
+   43  ping 172.1.0.100
+   44  ip a
+   45  ping 172.1.0.100
+   46  ping 172.1.0.99
+   47  virsh -c qemu+ssh://root@172.1.0.99/system list --all
+   48  cat ~/.ssh/id_rsa.pub 
+   49  virsh -c qemu+ssh://root@172.1.0.99/system list --all
+   50  virsh -c qemu+ssh://root@172.1.0.99/system list --all
+   51  clear
+   52  virsh -c qemu+ssh://root@172.1.0.99/system list --all
+   53  virsh console 2
+   54  exit
+   55  virsh -c qemu+ssh://root@172.1.0.99/system list --all
+   56  ssh root@172.1.0.99
+   57  exit
+   58  cat ~/.ssh/id_rsa.pub 
+   59  ssh root@172.1.0.22
+   60  ssh root@172.1.0.22
+   61  clear
+   62  exit
+   63  ssh root@precision.braincraft.io
+   64  echo "172.1.0.22 precision.braincraft.io precision" >>/etc/hosts
+   65  sudo echo "172.1.0.22 precision.braincraft.io precision" >>/etc/hosts
+   66  exit
+   67  ssh root@precision.braincraft.io
+   68  ssh root@precision
+   69  clear
+   70  exit
+   71  ssh ubuntu@xenial.maas
+   72  exit
+   73  ssh-copy-id root@precision.braincraft.io
+   74  ssh root@precision
+   75  exit
+   76  vim /etc/hosts
+   77  exit
+   78  ssh root@precision
+   79  clear
+   80  exit
+   81  ssh ubuntu@apd
+   82  ssh ubuntu@172.1.0.23
+   83  ssh root@172.1.0.23
+   84  exit
+   85  ssh precision.braincraft.io
+   86  ssh root@precision.braincraft.io
+   87  virsh -c qemu+ssh://root@precision.braincraft.io/system list --all
+   88  ping precision.braincraft.io
+   89  ip a
+   90  exit
+   91  cd
+   92  ls
+   93  vim maas-proxy.conf 
+   94  history >>/tmp/build.log

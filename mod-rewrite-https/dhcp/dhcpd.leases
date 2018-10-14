@@ -1,0 +1,157 @@
+# The format of this file is documented in the dhcpd.leases(5) manual page.
+# This lease file was written by isc-dhcp-4.3.3
+
+lease 172.10.0.253 {
+  starts 3 2018/01/31 06:28:10;
+  ends 3 2018/01/31 06:38:10;
+  tstp 3 2018/01/31 06:38:10;
+  cltt 3 2018/01/31 06:28:10;
+  binding state free;
+  hardware ethernet 52:54:00:55:1f:77;
+  set clht = "test";
+  set cllt = "600";
+  set clip = "172.10.0.253";
+  set clhw = "52:54:0:55:1f:77";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.10.0.252 {
+  starts 3 2018/01/31 06:49:58;
+  ends 3 2018/01/31 06:59:58;
+  tstp 3 2018/01/31 06:59:58;
+  cltt 3 2018/01/31 06:49:58;
+  binding state free;
+  hardware ethernet 52:54:00:c3:03:e9;
+  set clht = "asdf";
+  set cllt = "600";
+  set clip = "172.10.0.252";
+  set clhw = "52:54:0:c3:3:e9";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.10.0.251 {
+  starts 3 2018/01/31 06:49:59;
+  ends 3 2018/01/31 06:59:59;
+  tstp 3 2018/01/31 06:59:59;
+  cltt 3 2018/01/31 06:49:59;
+  binding state free;
+  hardware ethernet 52:54:00:86:0f:01;
+  set clht = "qwerty";
+  set cllt = "600";
+  set clip = "172.10.0.251";
+  set clhw = "52:54:0:86:f:1";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.10.0.250 {
+  starts 3 2018/01/31 13:58:28;
+  ends 3 2018/01/31 14:08:28;
+  tstp 3 2018/01/31 14:08:28;
+  cltt 3 2018/01/31 13:58:28;
+  binding state free;
+  hardware ethernet 52:54:00:33:d0:e6;
+  set clht = "git";
+  set cllt = "600";
+  set clip = "172.10.0.250";
+  set clhw = "52:54:0:33:d0:e6";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.10.0.249 {
+  starts 3 2018/01/31 20:10:20;
+  ends 3 2018/01/31 20:20:20;
+  cltt 3 2018/01/31 20:10:20;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet 00:16:3e:c8:3a:82;
+  set clht = "cpt01";
+  set cllt = "600";
+  set clip = "172.10.0.249";
+  set clhw = "0:16:3e:c8:3a:82";
+  client-hostname "cpt01";
+  on expiry {
+    set clhw = 
+       binary-to-ascii (16, 8, ":", 
+                        substring (hardware, 1, 6)) ;
+    set clip = 
+       binary-to-ascii (10, 8, ".", leased-address) ;
+    execute ("/usr/sbin/maas-dhcp-helper", "notify", "--action", "expiry", 
+        "--mac", clhw, "--ip-family", "ipv4", "--ip", clip, "--socket", "/var/lib/maas/dhcpd.sock");
+  }
+  on release {
+    set clhw = 
+       binary-to-ascii (16, 8, ":", 
+                        substring (hardware, 1, 6)) ;
+    set clip = 
+       binary-to-ascii (10, 8, ".", leased-address) ;
+    execute ("/usr/sbin/maas-dhcp-helper", "notify", "--action", "release",
+        "--mac", clhw, "--ip-family", "ipv4", "--ip", clip, "--socket", "/var/lib/maas/dhcpd.sock");
+  }
+}
+lease 172.11.135.160 {
+  starts 3 2018/01/31 06:50:17;
+  ends 3 2018/01/31 07:00:17;
+  tstp 3 2018/01/31 07:00:17;
+  cltt 3 2018/01/31 06:50:17;
+  binding state free;
+  hardware ethernet 52:54:00:55:1f:77;
+  set clht = "test";
+  set cllt = "600";
+  set clip = "172.11.135.160";
+  set clhw = "52:54:0:55:1f:77";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.11.135.161 {
+  starts 3 2018/01/31 14:19:58;
+  ends 3 2018/01/31 14:29:58;
+  tstp 3 2018/01/31 14:29:58;
+  cltt 3 2018/01/31 14:19:58;
+  binding state free;
+  hardware ethernet 52:54:00:33:d0:e6;
+  set clht = "git";
+  set cllt = "600";
+  set clip = "172.11.135.161";
+  set clhw = "52:54:0:33:d0:e6";
+  set vendor-class-identifier = "Linux ipconfig";
+}
+lease 172.11.135.162 {
+  starts 3 2018/01/31 14:36:00;
+  ends 3 2018/01/31 14:46:00;
+  tstp 3 2018/01/31 14:46:00;
+  cltt 3 2018/01/31 14:36:00;
+  binding state free;
+  hardware ethernet 00:16:3e:35:7f:e7;
+  set clht = "cpt01";
+  set cllt = "600";
+  set clip = "172.11.135.162";
+  set clhw = "0:16:3e:35:7f:e7";
+}
+lease 172.10.0.249 {
+  starts 3 2018/01/31 20:14:08;
+  ends 3 2018/01/31 20:24:08;
+  cltt 3 2018/01/31 20:14:08;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet 00:16:3e:c8:3a:82;
+  set clht = "cpt01";
+  set cllt = "600";
+  set clip = "172.10.0.249";
+  set clhw = "0:16:3e:c8:3a:82";
+  client-hostname "cpt01";
+  on expiry {
+    set clhw = 
+       binary-to-ascii (16, 8, ":", 
+                        substring (hardware, 1, 6)) ;
+    set clip = 
+       binary-to-ascii (10, 8, ".", leased-address) ;
+    execute ("/usr/sbin/maas-dhcp-helper", "notify", "--action", "expiry", 
+        "--mac", clhw, "--ip-family", "ipv4", "--ip", clip, "--socket", "/var/lib/maas/dhcpd.sock");
+  }
+  on release {
+    set clhw = 
+       binary-to-ascii (16, 8, ":", 
+                        substring (hardware, 1, 6)) ;
+    set clip = 
+       binary-to-ascii (10, 8, ".", leased-address) ;
+    execute ("/usr/sbin/maas-dhcp-helper", "notify", "--action", "release",
+        "--mac", clhw, "--ip-family", "ipv4", "--ip", clip, "--socket", "/var/lib/maas/dhcpd.sock");
+  }
+}
